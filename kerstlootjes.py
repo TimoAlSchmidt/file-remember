@@ -1,5 +1,4 @@
-import random
-
+import random, json, os.path, time
 random.seed()
 
 lootjes = {}
@@ -38,6 +37,14 @@ while flag:
                     if antwoord != lot:
                         flag2 = False
                 lootjes[lot] = antwoord
+
+
+filepath = "data/"+str(time.time())+".json"
+if not os.path.exists(filepath):
+    file = open(filepath, "x")
+
+with open(filepath, "a") as file:
+    file.write(json.dumps(lootjes))
 
 print(lootjes)
 
