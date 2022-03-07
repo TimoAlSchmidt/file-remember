@@ -1,4 +1,4 @@
-import random, json, os.path, time
+import random, json, os, os.path, time
 random.seed()
 
 lootjes = {}
